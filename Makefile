@@ -1,5 +1,5 @@
 CC = /home/noahdavis/Documents/toolchains/riscv32-esp-elf-16.1.0_20260609-x86_64-linux-gnu/riscv32-esp-elf/bin/riscv32-esp-elf-gcc
-CFLAGS = -march=rv32imac -mabi=ilp32 -Os -Wall -Werror
+CFLAGS = -march=rv32imac -mabi=ilp32 -Os -Wall -Werror -nostdlib
 
 target: main.o gpio.o
 	echo "Linking object files"

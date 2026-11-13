@@ -14,5 +14,5 @@ int main() {
     // Read the value of GPIO pin 7
     int value;
     gpio_read_pin(pin, &value);
-    return 0;
+    returns 0;
 }
