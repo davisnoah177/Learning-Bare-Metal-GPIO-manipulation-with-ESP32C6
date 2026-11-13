@@ -13,6 +13,8 @@ The IO mux is used to directly connect GPIO signals to a pin.  GPIO MUX can be u
 
 * Need to install the riscv32-esp-elf-gcc compiler to compile code for ESP32. 
 
+* for RISC-V - stdlib includes may cause linking step to throw warnings. **-nostdlib** flag prevents the compiler from trying to link stdlib functions.
+
 ## Makefile
 
 CC is a variable used to store the file path of the compiler. gcc and clang typically are stored globally to file path does not need to be explicitly specified. Specific compilers like the one listed above need to be installed somewhere and referenced explicitly.
@@ -20,3 +22,6 @@ CC is a variable used to store the file path of the compiler. gcc and clang typi
 ## How to define registers
 
 * Need to figure out more about how to define registers so the preprocessor can recognise them.
+
+Register offsets are defined in the technical reference manual. Need to take the base address of the GPIO register and add the corresponding offset. 
+Then need to define a pointer that references this address for each of the required registers.
