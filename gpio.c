@@ -5,7 +5,16 @@
 
 #define GPIO_REG_BASE_ADDR          0x60091000
 #define GPIO_REG_OFFSET            0x0554
+#define GPIO_ENABLE_W1TS_REG_OFFSET 0x0024 // offsets defined in the ESP32C6 Technical Reference Manual
+#define GPIO_OUT_W1TS_REG_OFFSET    0x0008
+#define GPIO_OUT_W1TC_REG_OFFSET    0x000C
+#define GPIO_IN_REG_OFFSET          0x003C
+
 #define GPIO_FUNCn_OUT_SEL_CFG(pin) (*(volatile uint32_t *)(GPIO_REG_BASE_ADDR + GPIO_REG_OFFSET + (pin * 4)))
+#define GPIO_ENABLE_W1TS_REG        (*(volatile uint32_t *)(GPIO_REG_BASE_ADDR + GPIO_ENABLE_W1TS_REG_OFFSET)) /* Write 1 to enable output */
+#define GPIO_OUT_W1TS_REG           (*(volatile uint32_t *)(GPIO_REG_BASE_ADDR + GPIO_OUT_W1TS_REG_OFFSET)) /* Write 1 to set output */
+#define GPIO_OUT_W1TC_REG           (*(volatile uint32_t *)(GPIO_REG_BASE_ADDR + GPIO_OUT_W1TC_REG_OFFSET)) /* Write 1 to clear output */
+#define GPIO_IN_REG                 (*(volatile uint32_t *)(GPIO_REG_BASE_ADDR + GPIO_IN_REG_OFFSET)) /* Read input value */
 #define GPIO_OUT_SEL_MASK           (0xFF << 0)   /* Bits 7:0 */
 #define GPIO_OUT_INV_SEL            (1 << 8)      /* Bit 8 */
 #define GPIO_OEN_SEL                (1 << 9)      /* Bit 9 */
