@@ -1,4 +1,5 @@
 #include "gpio.h"
+#include "stdint.h"
 
 /* GPIO Driver for ESP32C6-WROOM1 DevKit. Intended for self study of bare-metal programming */
 

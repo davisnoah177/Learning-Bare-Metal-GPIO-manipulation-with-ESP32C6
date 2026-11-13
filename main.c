@@ -1,6 +1,6 @@
 #include "gpio.h"
 
-void main() {
+int main() {
 
     int pin = 7;
 
@@ -14,4 +14,5 @@ void main() {
     // Read the value of GPIO pin 7
     int value;
     gpio_read_pin(pin, &value);
+    return 0;
 }
